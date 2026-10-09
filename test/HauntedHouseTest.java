@@ -71,7 +71,17 @@ class HauntedHouseTest {
         assertEquals(5, house.getCandyCount());
     }
 
+    @Test
+    void Haunting(){
+        house.scareAwayGhost();
+        house.trickOrTreat(2);
+        house.trickOrTreat(2);
+        house.trickOrTreat(2);
+        house.trickOrTreat(2);
+        house.trickOrTreat(2);
+        assertTrue(house.isGhostPresent());
 
+    }
     @Test
     void getCandyCount() {
     }

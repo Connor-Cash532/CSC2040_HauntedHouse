@@ -1,10 +1,12 @@
 public class HauntedHouse {
     private boolean ghostPresent;
     private int candyCount;
+    private int givesCandyCount;
 
     public HauntedHouse() {
         ghostPresent = true;
         candyCount = 10;
+        givesCandyCount = 0;
     }
 
     public boolean isGhostPresent() {
@@ -24,6 +26,8 @@ public class HauntedHouse {
         if(people < candyCount && people >= 0)
             candyCount = candyCount - people;
         replenishCandy();
+        givesCandyCount += 1;
+        Haunting();
     }
     public void replenishCandy(){
         if (candyCount == 0)
@@ -38,8 +42,10 @@ public class HauntedHouse {
     }
 
     public void Haunting(){
-        ghostPresent = true;
+        if(givesCandyCount != 0 && givesCandyCount % 5 == 0)
+            ghostPresent = true;
     }
+
 
     @Override
     public String toString() {
