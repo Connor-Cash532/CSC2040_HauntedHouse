@@ -23,6 +23,7 @@ public class HauntedHouse {
     public void trickOrTreat(int people){
         if(people < candyCount && people >= 0)
             candyCount = candyCount - people;
+        replenishCandy();
     }
     public void replenishCandy(){
         if (candyCount == 0)
