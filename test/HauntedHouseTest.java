@@ -42,13 +42,16 @@ class HauntedHouseTest {
         assertEquals(10, house.getCandyCount());
         house.refillCandyBowl(10);
         assertEquals(20, house.getCandyCount());
-        house.refillCandyBowl(-10);
-        assertEquals(20, house.getCandyCount());
         house.refillCandyBowl(0);
         assertEquals(20, house.getCandyCount());
 
     }
 
+    @Test
+    void negativeCandy(){
+        house.refillCandyBowl(-10);
+        assertEquals(10, house.getCandyCount());
+    }
     @Test
     void trickOrTreat() {
         house.trickOrTreat(5);
