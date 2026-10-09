@@ -59,6 +59,13 @@ class HauntedHouseTest {
     }
 
     @Test
+    void TooManyPeople(){
+        house.trickOrTreat(12);
+        assertEquals(10, house.getCandyCount());
+    }
+
+
+    @Test
     void getCandyCount() {
     }
 
